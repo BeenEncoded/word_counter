@@ -8,14 +8,18 @@ QMAKE_CXXFLAGS += /IC:\Users\include #additional includes
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = executable_name
+TARGET = word_counter
 TEMPLATE = app
 
-#SOURCES += 
+SOURCES += main.cpp \
+			gui/MainWindow.cpp \
+			gui/widgets/WordCount.cpp
 
-#HEADERS += 
+HEADERS += gui/MainWindow.hpp \
+			gui/widgets/WordCount.hpp
 
-#FORMS   += 
+FORMS   += gui/MainWindow.ui \
+			gui/widgets/WordCount.ui
 
 #RESOURCES += 
 
