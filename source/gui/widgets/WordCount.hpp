@@ -15,8 +15,12 @@ public:
 	explicit WordCount(QWidget* = nullptr);
 	~WordCount();
 
+public slots:
+	void openFile();
+
 private:
 	Ui::WordCount* ui;
+	QString file;
 };
 
 #endif

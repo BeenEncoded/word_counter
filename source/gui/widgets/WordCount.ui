@@ -39,7 +39,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox">
+    <widget class="QGroupBox" name="result_box">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -57,7 +57,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit"/>
+         <widget class="QLineEdit" name="include"/>
         </item>
         <item>
          <spacer name="horizontalSpacer_2">
@@ -84,7 +84,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_2"/>
+         <widget class="QLineEdit" name="exclude"/>
         </item>
         <item>
          <spacer name="horizontalSpacer_3">
@@ -102,7 +102,7 @@
        </layout>
       </item>
       <item>
-       <widget class="QListWidget" name="listWidget"/>
+       <widget class="QListWidget" name="list"/>
       </item>
      </layout>
     </widget>
@@ -110,5 +110,25 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>WordCount</receiver>
+   <slot>openFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>103</x>
+     <y>40</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-288</x>
+     <y>173</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>openFile()</slot>
+ </slots>
 </ui>

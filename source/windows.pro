@@ -2,7 +2,17 @@ QT       += core gui widgets
 
 CONFIG += C++14 debug
 
-#LIBS += 
+#release libs
+CONFIG(release, debug|release) {
+	LIBS += "C:\lib\x64\libboost_system-vc140-mt-1_60.lib" \
+		"C:\lib\x64\libboost_filesystem-vc140-mt-1_60.lib"
+}
+
+#debug libs
+CONFIG(debug, debug|release) {
+	LIBS += "C:\lib\x64\libboost_system-vc140-mt-gd-1_60.lib" \
+		"C:\lib\x64\libboost_filesystem-vc140-mt-gd-1_60.lib"
+}
 
 QMAKE_CXXFLAGS += /IC:\Users\include #additional includes
 
