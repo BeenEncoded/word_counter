@@ -52,12 +52,16 @@
         <item>
          <widget class="QLabel" name="label">
           <property name="text">
-           <string>Filter (include): </string>
+           <string>Filter (explicitly): </string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="include"/>
+         <widget class="QLineEdit" name="include">
+          <property name="toolTip">
+           <string>the words in this textbox are the only words that will be shown if they were found</string>
+          </property>
+         </widget>
         </item>
         <item>
          <spacer name="horizontalSpacer_2">
@@ -79,12 +83,16 @@
         <item>
          <widget class="QLabel" name="label_2">
           <property name="text">
-           <string>Filter (exclude):</string>
+           <string>Filter (exclusively):</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="exclude"/>
+         <widget class="QLineEdit" name="exclude">
+          <property name="toolTip">
+           <string>the words in this textbox are the words that will be removed from the list of results if they were found</string>
+          </property>
+         </widget>
         </item>
         <item>
          <spacer name="horizontalSpacer_3">
@@ -127,8 +135,59 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>include</sender>
+   <signal>returnPressed()</signal>
+   <receiver>WordCount</receiver>
+   <slot>applyExplicitFilter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>256</x>
+     <y>143</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>389</x>
+     <y>749</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>exclude</sender>
+   <signal>returnPressed()</signal>
+   <receiver>WordCount</receiver>
+   <slot>applyExclusiveFilter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>305</x>
+     <y>188</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>458</x>
+     <y>858</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>list</sender>
+   <signal>itemActivated(QListWidgetItem*)</signal>
+   <receiver>WordCount</receiver>
+   <slot>showSentences(QListWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>485</x>
+     <y>406</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>767</x>
+     <y>1127</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>openFile()</slot>
+  <slot>applyExplicitFilter()</slot>
+  <slot>applyExclusiveFilter()</slot>
+  <slot>showSentences(QListWidgetItem*)</slot>
  </slots>
 </ui>

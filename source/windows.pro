@@ -1,6 +1,6 @@
 QT       += core gui widgets
 
-CONFIG += C++14 debug
+CONFIG += C++14 debug release
 
 #release libs
 CONFIG(release, debug|release) {
@@ -23,13 +23,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
 			gui/MainWindow.cpp \
-			gui/widgets/WordCount.cpp
+			gui/widgets/WordCount.cpp \
+			gui/dialogs/ListDialog.cpp
 
 HEADERS += gui/MainWindow.hpp \
-			gui/widgets/WordCount.hpp
+			gui/widgets/WordCount.hpp \
+			gui/dialogs/ListDialog.hpp
 
 FORMS   += gui/MainWindow.ui \
-			gui/widgets/WordCount.ui
+			gui/widgets/WordCount.ui \
+			gui/dialogs/ListDialog.ui
 
 #RESOURCES += 
 
