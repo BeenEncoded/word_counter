@@ -177,6 +177,7 @@ void WordCount::openFile()
 	if(in.good()) this->sentences = tokenize_into_sentences<std::wstring, std::wistream>(in);
 	in.close();
 
+	this->ui->word_count->setText(QString::fromStdString(std::to_string(this->words.size())));
 	this->refreshList();
 	this->ui->result_box->setEnabled(true);
 }

@@ -1,6 +1,6 @@
 QT       += core gui widgets
 
-CONFIG += C++14 debug release
+CONFIG += C++14 debug
 
 #release libs
 CONFIG(release, debug|release) {
