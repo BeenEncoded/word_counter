@@ -72,14 +72,13 @@ public slots:
 	void applyExplicitFilter();
 	void applyExclusiveFilter();
 	void refreshList();
-	void showSentences(QListWidgetItem*);
+	void displayContexts(QListWidgetItem*);
 
 private:
 	Ui::WordCount* ui;
 	QString file;
 	data::filter_data filter;
 	std::vector<std::pair<QString, unsigned long> > words;
-	std::vector<std::wstring> sentences;
 };
 
 #endif

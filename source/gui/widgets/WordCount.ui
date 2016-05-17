@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>950</width>
-    <height>529</height>
+    <width>344</width>
+    <height>371</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -50,17 +50,11 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
-         <spacer name="horizontalSpacer_5">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Entries:</string>
           </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="word_count">
@@ -74,6 +68,53 @@
         </item>
         <item>
          <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="concount">
+          <property name="toolTip">
+           <string>The number of words on each side of the chosen word when viewing contexts</string>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>9</number>
+          </property>
+          <property name="value">
+           <number>3</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Total Words in Document:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="total">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_6">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -166,8 +207,8 @@
    <slot>openFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>103</x>
-     <y>40</y>
+     <x>84</x>
+     <y>32</y>
     </hint>
     <hint type="destinationlabel">
      <x>-288</x>
@@ -182,8 +223,8 @@
    <slot>applyExplicitFilter()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>256</x>
-     <y>143</y>
+     <x>241</x>
+     <y>111</y>
     </hint>
     <hint type="destinationlabel">
      <x>389</x>
@@ -198,8 +239,8 @@
    <slot>applyExclusiveFilter()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>305</x>
-     <y>188</y>
+     <x>249</x>
+     <y>139</y>
     </hint>
     <hint type="destinationlabel">
      <x>458</x>
@@ -211,15 +252,15 @@
    <sender>list</sender>
    <signal>itemActivated(QListWidgetItem*)</signal>
    <receiver>WordCount</receiver>
-   <slot>showSentences(QListWidgetItem*)</slot>
+   <slot>displayContexts(QListWidgetItem*)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>485</x>
-     <y>406</y>
+     <x>104</x>
+     <y>253</y>
     </hint>
     <hint type="destinationlabel">
-     <x>767</x>
-     <y>1127</y>
+     <x>203</x>
+     <y>506</y>
     </hint>
    </hints>
   </connection>
@@ -228,6 +269,6 @@
   <slot>openFile()</slot>
   <slot>applyExplicitFilter()</slot>
   <slot>applyExclusiveFilter()</slot>
-  <slot>showSentences(QListWidgetItem*)</slot>
+  <slot>displayContexts(QListWidgetItem*)</slot>
  </slots>
 </ui>

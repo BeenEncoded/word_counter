@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ListDialog</class>
- <widget class="QDialog" name="ListDialog">
+ <class>ContextListDialog</class>
+ <widget class="QDialog" name="ContextListDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>789</width>
-    <height>629</height>
+    <width>400</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ListDialog</string>
+   <string>Contexts</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <spacer name="horizontalSpacer_4">
+      <spacer name="horizontalSpacer_3">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -30,14 +30,21 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="count">
+      <widget class="QLabel" name="label">
        <property name="text">
-        <string>COUNT</string>
+        <string>Entries in the list below:</string>
        </property>
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer_3">
+      <widget class="QLabel" name="count">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -52,9 +59,9 @@
     </layout>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupbox">
+    <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string/>
+      <string>Context List:</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
@@ -66,7 +73,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <spacer name="horizontalSpacer_2">
+      <spacer name="horizontalSpacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -79,14 +86,14 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushbutton">
+      <widget class="QPushButton" name="pushButton">
        <property name="text">
-        <string>OK</string>
+        <string>Ok</string>
        </property>
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer">
+      <spacer name="horizontalSpacer_2">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -106,18 +113,18 @@
  <resources/>
  <connections>
   <connection>
-   <sender>pushbutton</sender>
+   <sender>pushButton</sender>
    <signal>clicked()</signal>
-   <receiver>ListDialog</receiver>
+   <receiver>ContextListDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>398</x>
-     <y>592</y>
+     <x>224</x>
+     <y>221</y>
     </hint>
     <hint type="destinationlabel">
-     <x>688</x>
-     <y>1077</y>
+     <x>289</x>
+     <y>477</y>
     </hint>
    </hints>
   </connection>

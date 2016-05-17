@@ -24,15 +24,17 @@ TEMPLATE = app
 SOURCES += main.cpp \
 			gui/MainWindow.cpp \
 			gui/widgets/WordCount.cpp \
-			gui/dialogs/ListDialog.cpp
+			algo.cpp \
+			gui/dialogs/ContextListDialog.cpp
 
 HEADERS += gui/MainWindow.hpp \
 			gui/widgets/WordCount.hpp \
-			gui/dialogs/ListDialog.hpp
+			algo.hpp \
+			gui/dialogs/ContextListDialog.hpp
 
 FORMS   += gui/MainWindow.ui \
 			gui/widgets/WordCount.ui \
-			gui/dialogs/ListDialog.ui
+			gui/dialogs/ContextListDialog.ui
 
 #RESOURCES += 
 
