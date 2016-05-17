@@ -2,20 +2,39 @@ QT       += core gui widgets
 
 CONFIG += C++14 debug
 
-#LIBS += 
+#release libs
+CONFIG(release, debug|release) {
+	LIBS += "C:\lib\x64\libboost_system-vc140-mt-1_60.lib" \
+		"C:\lib\x64\libboost_filesystem-vc140-mt-1_60.lib"
+}
+
+#debug libs
+CONFIG(debug, debug|release) {
+	LIBS += "C:\lib\x64\libboost_system-vc140-mt-gd-1_60.lib" \
+		"C:\lib\x64\libboost_filesystem-vc140-mt-gd-1_60.lib"
+}
 
 QMAKE_CXXFLAGS += /IC:\Users\include #additional includes
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = executable_name
+TARGET = word_counter
 TEMPLATE = app
 
-#SOURCES += 
+SOURCES += main.cpp \
+			gui/MainWindow.cpp \
+			gui/widgets/WordCount.cpp \
+			algo.cpp \
+			gui/dialogs/ContextListDialog.cpp
 
-#HEADERS += 
+HEADERS += gui/MainWindow.hpp \
+			gui/widgets/WordCount.hpp \
+			algo.hpp \
+			gui/dialogs/ContextListDialog.hpp
 
-#FORMS   += 
+FORMS   += gui/MainWindow.ui \
+			gui/widgets/WordCount.ui \
+			gui/dialogs/ContextListDialog.ui
 
 #RESOURCES += 
 
